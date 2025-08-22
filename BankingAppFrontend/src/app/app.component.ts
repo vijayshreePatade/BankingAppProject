@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'] // ✅ Fixed property name
+  styleUrls: ['./app.component.css'] 
 })
 export class AppComponent {
   title = 'Banking App';
