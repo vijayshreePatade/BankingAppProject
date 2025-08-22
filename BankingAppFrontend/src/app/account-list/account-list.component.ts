@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';  // ✅ Import Router
+import { Router } from '@angular/router';  
 import { AccountService } from '../account.service';
 import { Account } from '../account';
 
@@ -11,8 +11,7 @@ import { Account } from '../account';
 export class AccountListComponent implements OnInit {
   accounts: Account[] = [];
 
-  constructor(private accountService: AccountService, private router: Router) {}  // ✅ Inject Router
-
+  constructor(private accountService: AccountService, private router: Router) {}  
   ngOnInit(): void {
     this.getAccounts();
   }
@@ -33,7 +32,7 @@ export class AccountListComponent implements OnInit {
       },
       (error) => {
         console.error('Delete failed:', error);
-        alert(error.error.message || 'Failed to delete account');  // ✅ Proper error message
+        alert(error.error.message || 'Failed to delete account');  
       }
     );
   }
@@ -44,7 +43,7 @@ export class AccountListComponent implements OnInit {
   }
 
   deposit(id: number): void {
-    this.router.navigate(['/deposit', id]);  // ✅ Now it works properly
+    this.router.navigate(['/deposit', id]); 
   }
   withdraw(id: number): void {
     this.router.navigate(['/withdraw', id]);  // ✅ Now it works properly
