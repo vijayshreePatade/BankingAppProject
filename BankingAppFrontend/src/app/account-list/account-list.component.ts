@@ -27,7 +27,7 @@ export class AccountListComponent implements OnInit {
       (response) => {
         console.log('Account deleted:', response); // Debugging ke liye
         alert(response.message);
-          // ✅ Yeh sahi string show karega
+         
           this.getAccounts();
       },
       (error) => {
@@ -46,6 +46,6 @@ export class AccountListComponent implements OnInit {
     this.router.navigate(['/deposit', id]); 
   }
   withdraw(id: number): void {
-    this.router.navigate(['/withdraw', id]);  // ✅ Now it works properly
+    this.router.navigate(['/withdraw', id]);  
   }
 }
