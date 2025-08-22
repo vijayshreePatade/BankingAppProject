@@ -9,7 +9,7 @@ import { Account } from '../account';
   styleUrls: ['./account-details.component.css']
 })
 export class AccountDetailsComponent implements OnInit {
-  account!: Account; // ✅ Ensure this is always defined
+  account!: Account; 
 
   constructor(
     private route: ActivatedRoute,
@@ -17,13 +17,13 @@ export class AccountDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id')); // ✅ Get ID from URL
+    const id = Number(this.route.snapshot.paramMap.get('id')); 
     this.getAccountDetails(id);
   }
 
   getAccountDetails(id: number): void {
     this.accountService.getAccountById(id).subscribe(data => {
-      this.account = data; // ✅ Assign fetched data to 'account'
+      this.account = data; 
     });
   }
 }
