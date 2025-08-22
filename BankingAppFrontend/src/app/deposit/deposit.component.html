@@ -1,0 +1,13 @@
+<div class="col-md-8 offset-md-3">
+    <h1 class="text-center">Deposit</h1>
+    
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="balance">Balance</label>
+            <input type="number" id="balance" class="form-control" name="balance" 
+                   placeholder="Enter balance" [(ngModel)]="deposit" required>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>

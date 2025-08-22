@@ -1,0 +1,37 @@
+<h2 class="mb-3">Account List</h2>
+
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>ID</th>
+      <th>Account Holder</th>
+      <th>Balance</th>
+      <th class="text-center">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let account of accounts">
+      <td>{{ account.id }}</td>
+      <td>{{ account.accountHolderName }}</td>
+      <td>{{ account.balance | currency:'INR':'symbol' }}</td>
+
+      <td class="text-center">
+        <div class="btn-group" role="group">
+          <button (click)="deleteAccount(account.id)" class="btn btn-danger btn-sm">
+            Delete
+          </button>
+          <button (click)="deposit(account.id)" class="btn btn-info btn-sm" style="margin-left: 50px;">
+            Deposit
+          </button>
+          <button (click)="withdraw(account.id)" class="btn btn-warning btn-sm" style="margin-left: 50px;">
+            Withdraw
+          </button>
+          <button (click)="viewAccount(account.id)" class="btn btn-primary btn-sm" style="margin-left: 50px;">
+            View
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
